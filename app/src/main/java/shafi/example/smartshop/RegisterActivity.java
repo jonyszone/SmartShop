@@ -24,7 +24,6 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private Button CreateAccountButton;
     private EditText InputName, InputPhoneNumber, InputPassword;
     private ProgressDialog loadingBar;
 
@@ -33,13 +32,13 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        CreateAccountButton = findViewById(R.id.register_btn);
+        Button createAccountButton = findViewById(R.id.register_btn);
         InputName = findViewById(R.id.register_username_input);
         InputPhoneNumber = findViewById(R.id.register_phone_number_input);
         InputPassword = findViewById(R.id.register_password_input);
         loadingBar = new ProgressDialog(this);
         
-        CreateAccountButton.setOnClickListener(new View.OnClickListener() {
+        createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CreateAccount();
@@ -73,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void ValidatePhoneNumber(final String name, final String phone, final String password) {
+    private void ValidatePhoneNumber(String name, String phone, String password) {
 
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
@@ -102,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     }
                                     else{
                                         loadingBar.dismiss();
-                                        Toast.makeText(RegisterActivity.this,"Network Error: Try again",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterActivity.this,"Network Problem: Try again",Toast.LENGTH_SHORT).show();
 
                                     }
 

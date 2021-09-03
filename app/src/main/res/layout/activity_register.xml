@@ -71,14 +71,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/register_password_input"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/button"
         android:padding="17dp"
-        android:textAllCaps="false"
-        android:textSize="20sp"
         android:text="Create Account"
-        android:textColor="#000000" />
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
 
 </RelativeLayout>

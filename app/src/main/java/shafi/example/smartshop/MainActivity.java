@@ -19,12 +19,9 @@ public class MainActivity extends AppCompatActivity {
         joinNowButton = findViewById(R.id.main_join_btn);
         loginButton = findViewById(R.id.main_login_btn);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(intent);
-            }
+        loginButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+            startActivity(intent);
         });
 
         joinNowButton.setOnClickListener(new View.OnClickListener() {
