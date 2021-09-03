@@ -13,7 +13,7 @@
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="190dp"
-        />
+        android:contentDescription="TODO" />
 
     <EditText
         android:id="@+id/login_phone_number_input"
@@ -30,23 +30,23 @@
         android:textColorHint="#000000"
         android:textSize="17sp"
         android:textStyle="bold" />
+
     <EditText
         android:id="@+id/login_password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_phone_number_input"
-        android:background="@drawable/input"
-        android:padding="20dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input"
         android:hint="Password"
-        android:inputType="number"
+        android:inputType="textPassword"
+        android:padding="20dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
         android:textSize="17sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"

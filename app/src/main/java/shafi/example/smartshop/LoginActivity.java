@@ -21,9 +21,8 @@ import shafi.example.smartshop.Model.Users;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText InputPhoneNumber, InputPassword;
-    private Button LoginButton;
     private ProgressDialog loadingBar;
-    private String parentDbName = "Users";
+    private final String parentDbName = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
 
         InputPhoneNumber = findViewById(R.id.login_phone_number_input);
         InputPassword = findViewById(R.id.login_password_input);
-        LoginButton = findViewById(R.id.login_btn);
+        Button loginButton = findViewById(R.id.login_btn);
         loadingBar = new ProgressDialog(this);
 
-        LoginButton.setOnClickListener(v -> LoginUser());
+        loginButton.setOnClickListener(v -> LoginUser());
     }
 
     private void LoginUser() {
@@ -61,26 +60,27 @@ public class LoginActivity extends AppCompatActivity {
         RootRef = FirebaseDatabase.getInstance().getReference();
 
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child(parentDbName).child(phone).exists()){
                     Users users = snapshot.child(parentDbName).child(phone).getValue(Users.class);
 
-                    if (users.getPhone().equals(phone)){
-                        if (users.getPassword().equals(password)){
-                            Toast.makeText(LoginActivity.this, "Successfully LoggedIn", Toast.LENGTH_SHORT).show();
+                    if (users != null && users.getPhone().equals(phone)) {
+                        if (users.getPassword().equals(password)) {
+                            Toast.makeText(LoginActivity.this, "logged in successful", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
-                        }else {
+                        } else {
                             loadingBar.dismiss();
-                            Toast.makeText(LoginActivity.this, "Password Incorrect", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Password incorrect", Toast.LENGTH_SHORT).show();
+
                         }
                     }
-
                 }else {
-                    Toast.makeText(LoginActivity.this, "This "+phone+ " do not exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "input incorrect", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             }
