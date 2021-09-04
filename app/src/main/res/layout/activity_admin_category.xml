@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminCategoryActivity">
+
+    <TextView
+        android:id="@+id/category_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="171dp"
+        android:layout_marginEnd="182dp"
+        android:text="Add new product"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear1_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_message">
+
+        <ImageView
+            android:id="@+id/t_shirts"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/tshirts">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/sports"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/sports1">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/female_dress"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/female_dress">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/sweathers"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/jacket">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1_category_layout">
+
+        <ImageView
+            android:id="@+id/glasses"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/glasses">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/purches_bag"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/purches_bag">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/hats"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/hats">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/shoes"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/shoes">
+
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear2_category_layout">
+
+        <ImageView
+            android:id="@+id/headphones"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/headphones">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/laptops"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/laptops">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/watches"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/watches">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/mobiles"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/mobiles">
+
+        </ImageView>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

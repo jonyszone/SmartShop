@@ -37,5 +37,8 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:25.12.0')
     implementation 'com.google.firebase:firebase-database:20.0.1'
     implementation 'com.google.firebase:firebase-analytics:19.0.1'
+    implementation 'io.github.pilgr:paperdb:2.7.1'
+
+
 
 }
