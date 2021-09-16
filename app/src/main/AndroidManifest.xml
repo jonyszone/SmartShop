@@ -15,9 +15,7 @@
         <activity
             android:name=".AdminAddNewProductActivity"
             android:exported="true" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="true" />
+        <activity android:name=".HomeActivity"/>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

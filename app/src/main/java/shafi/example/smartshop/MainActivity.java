@@ -1,15 +1,14 @@
 package shafi.example.smartshop;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,8 +22,12 @@ import shafi.example.smartshop.Model.Users;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button joinNowButton, loginButton;
-    private String parentDbName = "Users";
+    private final String parentDbName;
+
+    {
+        parentDbName = "Users";
+    }
+
     private ProgressDialog loadingBar;
 
     @Override
@@ -32,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        joinNowButton = findViewById(R.id.main_join_btn);
-        loginButton = findViewById(R.id.main_login_btn);
+        Button joinNowButton = findViewById(R.id.main_join_btn);
+        Button loginButton = findViewById(R.id.main_login_btn);
         loadingBar = new ProgressDialog(this);
 
         Paper.init(this);
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         String UserPhoneKey = Paper.book().read(ManifestData.UserPhoneKey);
         String UserPasswordKey = Paper.book().read(ManifestData.UserPasswordKey);
 
-        if (UserPhoneKey != "" && UserPasswordKey != ""){
+        if (!UserPhoneKey.equals("") && !UserPasswordKey.equals("")){
             if (!TextUtils.isEmpty(UserPhoneKey) && !TextUtils.isEmpty(UserPasswordKey)){
 
                 AllowAccess(UserPhoneKey, UserPasswordKey);
