@@ -13,4 +13,17 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="todo">TODO</string>
+    <string name="join_now">Join now</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_description">Product Description</string>
+    <string name="product_price">Product Price</string>
+    <string name="add_product">Add Product</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="i_m_an_admin">I\'m an Admin?</string>
+    <string name="i_m_not_an_admin">I\'m not an Admin?</string>
 </resources>

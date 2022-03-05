@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         String UserPhoneKey = Paper.book().read(ManifestData.UserPhoneKey);
         String UserPasswordKey = Paper.book().read(ManifestData.UserPasswordKey);
 
-        if (!UserPhoneKey.equals("") && !UserPasswordKey.equals("")){
+        if (UserPhoneKey != null && UserPasswordKey != null){
             if (!TextUtils.isEmpty(UserPhoneKey) && !TextUtils.isEmpty(UserPasswordKey)){
 
                 AllowAccess(UserPhoneKey, UserPasswordKey);
