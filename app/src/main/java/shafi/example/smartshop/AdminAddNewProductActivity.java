@@ -82,15 +82,6 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
 
     //Deprecated
-    /*
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == GalleryPick && resultCode == RESULT_OK && data != null) {
-            ImageUri = data.getData();
-            InputProductImage.setImageURI(ImageUri);
-        }
-    }           */
 
 
     private void ValidateProductData() {

@@ -1,19 +1,16 @@
 package shafi.example.smartshop;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,12 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         InputPassword = findViewById(R.id.register_password_input);
         loadingBar = new ProgressDialog(this);
         
-        createAccountButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CreateAccount();
-            }
-        });
+        createAccountButton.setOnClickListener(v -> CreateAccount());
     }
 
     private void CreateAccount() {
@@ -88,24 +80,21 @@ public class RegisterActivity extends AppCompatActivity {
                     userdataMap.put("name",name);
 
                     RootRef.child("Users").child(phone).updateChildren(userdataMap)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
+                            .addOnCompleteListener(task -> {
 
-                                    if (task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this, "WELCOME, Account Created Successfully",Toast.LENGTH_SHORT).show();
-                                        loadingBar.dismiss();
+                                if (task.isSuccessful()){
+                                    Toast.makeText(RegisterActivity.this, "WELCOME, Account Created Successfully",Toast.LENGTH_SHORT).show();
+                                    loadingBar.dismiss();
 
-                                        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                                        startActivity(intent);
-                                    }
-                                    else{
-                                        loadingBar.dismiss();
-                                        Toast.makeText(RegisterActivity.this,"Network Problem: Try again",Toast.LENGTH_SHORT).show();
-
-                                    }
+                                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    loadingBar.dismiss();
+                                    Toast.makeText(RegisterActivity.this,"Network Problem: Try again",Toast.LENGTH_SHORT).show();
 
                                 }
+
                             });
                 }
                 else{
