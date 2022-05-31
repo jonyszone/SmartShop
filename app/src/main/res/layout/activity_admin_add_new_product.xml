@@ -19,14 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:contentDescription="@string/todo"
             android:cropToPadding="false"
             android:scaleType="centerInside"
-            android:src="@drawable/select_product_image"
-            android:contentDescription="@string/todo">
+            android:src="@drawable/select_product_image">
 
         </ImageView>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,14 +35,13 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
             android:autofillHints=""
-            android:background="@drawable/input"
             android:hint="@string/product_name"
             android:inputType="textMultiLine"
             android:padding="20dp"
             android:textColor="#000000"
             android:textColorHint="#000">
 
-        </EditText>
+        </com.google.android.material.textfield.TextInputEditText>
 
         <EditText
             android:id="@+id/product_description"
@@ -54,7 +53,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/input"
             android:hint="@string/product_description"
             android:inputType="textMultiLine"
             android:minHeight="48dp"
@@ -74,26 +72,21 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
-            android:background="@drawable/input"
+            android:autofillHints=""
             android:hint="@string/product_price"
             android:inputType="textMultiLine"
             android:padding="20dp"
             android:textColor="#000000"
-            android:textColorHint="#000"
-            android:autofillHints="">
+            android:textColorHint="#000">
 
         </EditText>
 
         <Button
             android:id="@+id/add_new_product"
-            android:layout_width="232dp"
-            android:layout_height="63dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/product_price"
-            android:layout_alignStart="@+id/product_price"
-            android:layout_alignEnd="@+id/product_price"
-            android:layout_marginStart="38dp"
             android:layout_marginTop="25dp"
-            android:layout_marginEnd="42dp"
             android:elevation="4dp"
             android:text="@string/add_product" />
     </RelativeLayout>
